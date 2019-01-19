@@ -1,0 +1,39 @@
+<div class="image">
+
+<div *ngIf="sharingservice.getData('uid') !== null"> 
+  <br><br>
+    <label class="title">Appointment Form</label>
+    <br><br>
+
+    <label for="name">Please Enter your name:</label>
+        <input  placeholder="name" id="patientName" [(ngModel)]="userForm.patientName"/>
+        <br> <br>
+
+<label for="doctorList"><b>Please Select a Doctor:</b></label>
+ <select [(ngModel)]= "userForm.doctorName"(change)="onSelectDoctor($event)" >
+      <option [value]=""></option>
+     <option [value]="1">Mohamed</option>
+     <option [value]="2">Ahmed</option>
+     <option [value]="3">Ali</option>
+     <option [value]="4">Ismail</option>
+     <option [value]="5">Mahmoud</option>
+   </select>
+   <br><br> <br>
+   <label for="TimingList"><b>Please Select Desired time:</b></label>
+ <select [(ngModel)]= "userForm.timeDesired"(change)="onSelectTime($event)" >
+      <option [value]=""></option>
+     <option [value]="1">10am</option>
+     <option [value]="2">11am</option>
+     <option [value]="3">12pm</option>
+     <option [value]="4">1pm</option>
+     <option [value]="5">2pm</option>
+   </select>
+
+    <br><br>
+   <button class="btn btn-primary" type="submit" (click)="onSubmitData()">Submit</button>
+   <br><br><br>
+   <span class="msg-group">{{msg}}</span>
+   <!-- <span class="msg-group">{{Acceptedmsg}}</span> -->
+
+   </div>
+   </div>

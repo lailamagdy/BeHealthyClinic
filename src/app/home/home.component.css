@@ -1,0 +1,61 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ECF3F3;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color:green;
+  }
+  
+  
+  
+  
+  /* .active, .full-width { 
+      display: block;
+      font-size: 2em;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 4.0em;
+      font-weight: bold;
+      text-align: center;
+       width: 100%; 
+      background-color:#ECF3F3;
+  
+    }
+    .topnav-right.navlink{
+      display: block;
+      font-size: 2em;
+      margin-top: 0.67em;
+      margin-bottom: 0.67em;
+      margin-left: 0;
+      margin-right: 4.0em;
+      font-weight: bold;
+      text-align: right;
+       width: 60%; 
+      background-color:#ECF3F3;
+  
+  
+    } */
+    .image{
+      height: 60em;
+      background-size: cover;
+      width: auto;
+     background-image: url('/assets/clinicbg1.jpg'); 
+      background-position: 100%;
+    }

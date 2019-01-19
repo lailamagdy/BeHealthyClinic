@@ -1,0 +1,64 @@
+body{
+    font-family: Helvetica;
+    margin: 0;
+  }
+  
+  h1,h2,h3{
+    margin: 0;
+  }
+  
+  
+  
+  .content{
+    padding: 20px;
+    
+  }
+  
+  .content button,
+  .content input[type="submit"]{
+    background: lightblue;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    border: 0;
+    box-shadow: 2px 2px 2px rgba(172, 30, 30, 0.1);
+    font-size: 16px;
+  }
+  
+
+  .content input{
+    width: 40%;
+    padding: 10px 5%;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    margin: 10px 0;
+
+  }
+  .title{
+    color:green;
+  }
+
+  .msg-group{
+    color:green;
+  }
+  .image{
+
+
+
+
+    
+    height: 60em;
+    background-size: cover;
+    width: auto;
+     background-image: url('/assets/images/clinic7.jpeg'); 
+    background-position: 100%;
+    
+
+    
+}
+
+.title1{
+  font-style: italic;
+color: green;
+}

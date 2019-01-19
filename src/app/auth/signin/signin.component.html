@@ -1,0 +1,41 @@
+<div class="image">
+<div class="content">   
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">     
+    <form name="contactForm" (ngSubmit)="onSignin()">
+      <div class="form-group">
+        <label class="title">Sign In Form</label>
+        <br>  <br> 
+        <label for="email">Email</label>
+        <input type="email" placeholder="Email" id="email" name="email" [(ngModel)]="email" class="form-control" 
+          required #emailForm="ngModel" email/>
+      </div>
+      <div *ngIf="emailForm.invalid && (emailForm.dirty || emailForm.touched)">
+          <div class="msg-group"*ngIf="emailForm.errors.required">
+              <span>Email is required</span>
+            </div>
+            <div class="msg-group"*ngIf="emailForm.errors.email">
+                <span>Enter a valid Email</span>
+              </div>
+                  </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="password" [(ngModel)]="password" class="form-control"
+        required  minlength="6" #passForm="ngModel">
+      </div>
+      <div *ngIf="passForm.invalid && (passForm.dirty || passForm.touched)">
+          <div  class="msg-group"*ngIf="passForm.errors.required">
+              <span>Password is required</span>
+            </div>
+            <div class="msg-group"*ngIf="passForm.errors.minlength">
+                <span>must be at least 6 characters long.</span> 
+              </div>
+            </div>
+           
+
+
+      <button class="btn btn-primary" type="submit" [disabled]="emailForm.invalid || passForm.invalid">Sign In</button>
+      <span class="msg-group">{{errorMsg}}</span>
+    </form>
+    </div>
+  </div>
