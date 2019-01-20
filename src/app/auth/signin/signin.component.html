@@ -27,7 +27,7 @@
           <div  class="msg-group"*ngIf="passForm.errors.required">
               <span>Password is required</span>
             </div>
-            <div class="msg-group"*ngIf="passForm.errors.minlength">
+            <div class="msg-group"*ngIf="!passForm.errors.required">
                 <span>must be at least 6 characters long.</span> 
               </div>
             </div>
