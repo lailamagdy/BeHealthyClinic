@@ -22,7 +22,7 @@ export class UserPageComponent implements OnInit {
 
 // listUser:AngularFireList<any>;  
 
-  constructor(private dataStorageService: DataStorageService, private afDatabase: AngularFireDatabase, private sharingservice: SharingService) {
+  constructor(private dataStorageService: DataStorageService, private afDatabase: AngularFireDatabase, public sharingservice: SharingService) {
     this.dataStorageService.getUserInfo();
    }
 

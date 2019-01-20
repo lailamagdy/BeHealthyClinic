@@ -12,7 +12,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private sharingservice: SharingService, private router: Router) { }
+  constructor(public sharingservice: SharingService, private router: Router) { }
 
   ngOnInit() {
   
