@@ -23,7 +23,7 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
   }
-  onSignin(form: NgForm) {
+  onSignin() {
     firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
       Response => {
         this.userId = Response.user.uid;
