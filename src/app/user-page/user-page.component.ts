@@ -31,21 +31,21 @@ export class UserPageComponent implements OnInit {
 
   onSelectDoctor(event){
     this.userForm.doctorName= event.target.value;
-    if (this.userForm.doctorName=="1"){
-      this.userForm.doctorName="Mohamed"
-    }
-    if (this.userForm.doctorName=="2"){
-      this.userForm.doctorName="Ahmed"
-    }
-    if (this.userForm.doctorName=="3"){
-      this.userForm.doctorName="Ali"
-    }
-    if (this.userForm.doctorName=="4"){
-      this.userForm.doctorName="Ismail"
-    }
-    if (this.userForm.doctorName=="5"){
-      this.userForm.doctorName="Mahmoud"
-    }
+    // if (this.userForm.doctorName=="1"){
+    //   this.userForm.doctorName="Mohamed"
+    // }
+    // if (this.userForm.doctorName=="2"){
+    //   this.userForm.doctorName="Ahmed"
+    // }
+    // if (this.userForm.doctorName=="3"){
+    //   this.userForm.doctorName="Ali"
+    // }
+    // if (this.userForm.doctorName=="4"){
+    //   this.userForm.doctorName="Ismail"
+    // }
+    // if (this.userForm.doctorName=="5"){
+    //   this.userForm.doctorName="Mahmoud"
+    // }
      console.log(this.userForm.doctorName);    
       }
 
