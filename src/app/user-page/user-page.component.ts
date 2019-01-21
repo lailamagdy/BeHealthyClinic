@@ -3,6 +3,7 @@ import { DataStorageService } from './data-storage.service';
 // import { Response } from 'selenium-webdriver/http';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { SharingService } from '../Services/shareservice';
+import {formatDate} from '@angular/common';
 
 @Component({
   selector: 'app-user-page',
@@ -10,11 +11,12 @@ import { SharingService } from '../Services/shareservice';
   styleUrls: ['./user-page.component.css']
 })
 export class UserPageComponent implements OnInit {
-  // doctorsList :['ahmed','mohamed','ali'];
+today:string;  
   userForm={
     patientName:'',
     doctorName:'',
-    timeDesired:''
+    timeDesired:'',
+    date:''
   }
   msg: string = '';
   Acceptedmsg: string='';
@@ -24,6 +26,7 @@ export class UserPageComponent implements OnInit {
 
   constructor(private dataStorageService: DataStorageService, private afDatabase: AngularFireDatabase, public sharingservice: SharingService) {
     this.dataStorageService.getUserInfo();
+    this.today=formatDate(new Date(),'yyyy-MM-dd','en');
    }
 
   ngOnInit() {
@@ -46,10 +49,11 @@ export class UserPageComponent implements OnInit {
     // if (this.userForm.doctorName=="5"){
     //   this.userForm.doctorName="Mahmoud"
     // }
-     console.log(this.userForm.doctorName);    
+    //  console.log(this.userForm.doctorName);    
       }
 
       onSelectTime(event){
+        console.log(event.target.value)
         this.userForm.timeDesired= event.target.value;
         if (this.userForm.timeDesired=="1"){
           this.userForm.timeDesired="10am"
@@ -67,29 +71,30 @@ export class UserPageComponent implements OnInit {
           this.userForm.timeDesired="2pm"
         }
         
-        console.log(this.userForm.timeDesired);   
+        // console.log(this.userForm.timeDesired);   
           }
 
 onSubmitData(){
+  console.log(this.userForm)
   this.fArray=[];
   this.userForm.doctorName;
   this.afDatabase.database.ref('userForm').once('value').then(actions=>{
     actions.forEach(action=>{
           // let form=action.payload.toJSON()
           // form['$key']=action.key;
-          if(action.child('doctorName').val()==this.userForm.doctorName&&action.child('timeDesired').val()==this.userForm.timeDesired){   
+          if(action.child('doctorName').val()==this.userForm.doctorName&&action.child('timeDesired').val()==this.userForm.timeDesired&&action.child('date').val()==this.userForm.date ){   
          this.fArray.push(action.val())
-         console.log(action.val().child('patientName').val());
+        //  console.log(action.val().child('patientName').val());
          
         }
         })
         if(this.fArray.length==0){
     
-          console.log(this.fArray.length+'if')
+          // console.log(this.fArray.length+'if')
         this.afDatabase.database.ref('userForm').push(this.userForm);
         this.msg='Your reservation has been sent to Doctor '+this.userForm.doctorName+'  with the reservation time '+ this.userForm.timeDesired;
         } else {
-          console.log(this.fArray.length+'else')
+          // console.log(this.fArray.length+'else')
           this.msg='This Appointment is already taken! Please choose another Date ';  
         }
   })

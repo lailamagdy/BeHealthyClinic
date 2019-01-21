@@ -7,23 +7,25 @@
         <br><br>
     <label for="doctorList"><b>Doctor's List: </b></label>
      <select [(ngModel)]= "userForm.doctorName"(change)="onSelectDoctor($event)" >
-          <option [value]=""></option>
-         <option [value]="1">Mohamed</option>
-         <option [value]="2">Ahmed</option>
-         <option [value]="3">Ali</option>
-         <option [value]="4">Ismail</option>
-         <option [value]="5">Mahmoud</option>
+          <option value=""></option>
+         <option value="Mohamed">Mohamed</option>
+         <option value="Ahmed">Ahmed</option>
+         <option value="Ali">Ali</option>
+         <option value="Ismail">Ismail</option>
+         <option value="Mahmoud">Mahmoud</option>
        </select> <br>
        <br>
        <button class="btn btn-primary" type="submit" (click)="onSubmitData()">show Appointments</button>
        <br><br>
 
-<li *ngFor ="let msg of fArray" >
+<ul *ngFor ="let msg of fArray" >
   
-      <label class="patient">patient Name: {{msg.patientName}} </label> 
-        <label class="time">    Time: {{msg.timeDesired}} </label>
+      <li class="patient">patient Name: {{msg.patientName}} </li> 
+        <li class="time">    Time: {{msg.timeDesired}} </li>
+        <li class="time">    Date: {{msg.date}} </li>
+
    
-</li>
+</ul>
      
         <h2>{{msg}}</h2>  
        </div>

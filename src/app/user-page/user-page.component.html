@@ -18,18 +18,20 @@
      <option value="Ismail">Ismail</option>
      <option value="Mahmoud">Mahmoud</option>
    </select>
-   <br><br> <br>
+   <br><br> 
    <label for="TimingList"><b>Please Select Desired time:</b></label>
- <select [(ngModel)]= "userForm.timeDesired"(change)="onSelectTime($event)" >
+ <select class="timelist" [(ngModel)]= "userForm.timeDesired"(change)="onSelectTime($event)" >
       <!-- <option value=""></option> -->
-     <option value="1">10am</option>
-     <option value="2">11am</option>
-     <option value="3">12pm</option>
-     <option value="4">1pm</option>
-     <option value="5">2pm</option>
+     <option value="10am">10am</option>
+     <option value="11am">11am</option>
+     <option value="12pm">12pm</option>
+     <option value="1pm">1pm</option>
+     <option value="2pm">2pm</option>
    </select>
-   <br>
- Please select date :<input type="date" name="bday">
+   <br><br>
+   <label for="TimingList"><b> Please select date:</b></label>
+<input type="date" min="{{today}}" id="AppointmentDate" [(ngModel)]="userForm.date">
+
 
 
     <br><br>
