@@ -6,12 +6,17 @@
     <div *ngIf="sharingservice.getData('uid') == null"> 
         <img  style="float:left" src="assets/images/Capture1.PNG" alt="logo" class="logo">
         <!-- <h1 style="float:left" class="title1" >BeHealthy Clinic</h1>   -->
-    <li style="float:right" routerLinkActive="active"><a routerLink="/signin"class="active" href="#about">login</a></li>    
+    <li style="float:right" routerLinkActive="active"><a routerLink="/signin"class="active" href="#about">Login</a></li>    
 
     <li style="float:right" routerLinkActive="active"><a routerLink="/signup"class="active" href="#about">Register</a></li>
+    <li style="float:right" routerLinkActive="active"><a routerLink=""class="active" href="#about">Home</a></li>
+
    </div>
    <li style="float:right" routerLinkActive="active"><a style= "cursor: pointer;" (click)="onLogout()" *ngIf="sharingservice.getData('uid') !== null">logout</a></li>
    <img  *ngIf="sharingservice.getData('uid') !== null" style="float:left" src="assets/images/Capture1.PNG" alt="logo" class="logo">
+   <li style="float:right" routerLinkActive="active"><a routerLink="" style= "cursor: pointer;" *ngIf="sharingservice.getData('uid') !== null">Home</a></li>
+   <!-- <li style="float:right" routerLinkActive="active"><a routerLink="" style= "cursor: pointer;" *ngIf="sharingservice.getData('uid') !== null">Add Appointment</a></li> -->
+
 
    <!-- <li style="float:left"><a *ngIf="sharingservice.getData('uid') !== null">BeHealthy Clinic</a></li> -->
 
