@@ -6,10 +6,13 @@
     <div *ngIf="sharingservice.getData('uid') == null"> 
         <img  style="float:left" src="assets/images/Capture1.PNG" alt="logo" class="logo">
         <!-- <h1 style="float:left" class="title1" >BeHealthy Clinic</h1>   -->
+        <li style="float:right" routerLinkActive="active"><a routerLink="/about"class="active" href="#about">About</a></li>    
+
     <li style="float:right" routerLinkActive="active"><a routerLink="/signin"class="active" href="#about">Login</a></li>    
 
     <li style="float:right" routerLinkActive="active"><a routerLink="/signup"class="active" href="#about">Register</a></li>
     <li style="float:right" routerLinkActive="active"><a routerLink=""class="active" href="#about">Home</a></li>
+
 
    </div>
    <li style="float:right" routerLinkActive="active"><a style= "cursor: pointer;" (click)="onLogout()" *ngIf="sharingservice.getData('uid') !== null">logout</a></li>

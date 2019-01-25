@@ -34,22 +34,7 @@ today:string;
 
   onSelectDoctor(event){
     this.userForm.doctorName= event.target.value;
-    // if (this.userForm.doctorName=="1"){
-    //   this.userForm.doctorName="Mohamed"
-    // }
-    // if (this.userForm.doctorName=="2"){
-    //   this.userForm.doctorName="Ahmed"
-    // }
-    // if (this.userForm.doctorName=="3"){
-    //   this.userForm.doctorName="Ali"
-    // }
-    // if (this.userForm.doctorName=="4"){
-    //   this.userForm.doctorName="Ismail"
-    // }
-    // if (this.userForm.doctorName=="5"){
-    //   this.userForm.doctorName="Mahmoud"
-    // }
-    //  console.log(this.userForm.doctorName);    
+        
       }
 
       onSelectTime(event){
@@ -80,21 +65,15 @@ onSubmitData(){
   this.userForm.doctorName;
   this.afDatabase.database.ref('userForm').once('value').then(actions=>{
     actions.forEach(action=>{
-          // let form=action.payload.toJSON()
-          // form['$key']=action.key;
           if(action.child('doctorName').val()==this.userForm.doctorName&&action.child('timeDesired').val()==this.userForm.timeDesired&&action.child('date').val()==this.userForm.date ){   
          this.fArray.push(action.val())
-        //  console.log(action.val().child('patientName').val());
          
         }
         })
         if(this.fArray.length==0){
-    
-          // console.log(this.fArray.length+'if')
         this.afDatabase.database.ref('userForm').push(this.userForm);
         this.msg='Your reservation has been sent to Doctor '+this.userForm.doctorName+'  with the reservation time '+ this.userForm.timeDesired;
         } else {
-          // console.log(this.fArray.length+'else')
           this.msg='This Appointment is already taken! Please choose another Date ';  
         }
   })

@@ -46,12 +46,10 @@ export class SigninComponent implements OnInit {
        
 
         
-        // localStorage.setItem()
       }).catch(e => {
 
         if (e.code == 'auth/wrong-password') {
           this.errorMsg = 'The password you entered is incorrect';
-          //  console.log(this.errorMsg);
 
         }
         if (e.code == 'auth/user-not-found') {
@@ -60,22 +58,6 @@ export class SigninComponent implements OnInit {
         }
       });
 
-
-    //.then(() => {    
-    //  //localStorage.setItem("user", this.email);
-    //     // this.router.navigate(['/user-page']);
-
-    //   }).catch(e => {
-
-    //     if (e.code == 'auth/wrong-password') {
-    //       this.errorMsg = 'The password you entered is incorrect';
-
-    //     }
-    //     if (e.code == 'auth/user-not-found') {
-    //       this.errorMsg = 'User does not exist! please signup first';   
-
-    //     }
-    //   });
   }
   isAdminAuthenticated() {
     return sessionStorage.getItem('admin');
